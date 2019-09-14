@@ -49,11 +49,19 @@ Free and Open Source Microsoft Access File Conversion Tool
                                       NOTES                        
 --------------------------------------------------------------------------------
 - Required Java Libraries (these are included):
-    -OpenHMS Jackcess 3.0.1
-    -Apache Commons Logging 1.2
+    -OpenHMS Jackcess 3.0.1   
+              link: https://jackcess.sourceforge.io/
+    -Apache Commons Logging 1.2 
+              link: https://commons.apache.org/proper/commons-logging/
     -Apache Commons Lang 3.9
+              link: https://commons.apache.org/proper/commons-lang/
     -Apache POI 4.0 (Will 100% be necessary in the future)
+              link: https://poi.apache.org/
  
+ 
+- This program includes a sample accdb file to test with, from the following website:
+    link: https://www.dur.ac.uk/cis/docs/guides/files/access/
+    
 - Roadmap:
 
    - Complete support of all Access data types when writing to Access
