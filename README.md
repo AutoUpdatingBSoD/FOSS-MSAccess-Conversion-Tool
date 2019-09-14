@@ -50,6 +50,7 @@ Free and Open Source Microsoft Access File Conversion Tool
                                       NOTES                        
 --------------------------------------------------------------------------------
 - Required Java Libraries (these are included):
+
     -OpenHMS Jackcess 3.0.1   
               link: https://jackcess.sourceforge.io/
     -Apache Commons Logging 1.2 
