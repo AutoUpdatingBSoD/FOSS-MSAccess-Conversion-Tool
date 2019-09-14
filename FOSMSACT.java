@@ -36,7 +36,7 @@ public class FOSMSACT
                                   +"\n"
                                   +"The command line options are: \n"
                                   +"    [ -h || --help ]        if you need help.\n"
-                                  +"    [ -i || --filename ]    input filename        (REQUIRED)\n"
+                                  +"    [ -i || --input ]       input filename        (REQUIRED)\n"
                                   +"    [ -o || --output ]      output filename       (REQUIRED)\n"
                                   +"    [ -r || --revisionnum ] MS Access Revision    (will default to 2016 if not specified)\n"
                                   +"Options for revision number:\n"
