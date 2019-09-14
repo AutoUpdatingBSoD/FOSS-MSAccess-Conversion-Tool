@@ -10,6 +10,7 @@ Free and Open Source Microsoft Access File Conversion Tool
                                      ABOUT                                     
 --------------------------------------------------------------------------------
 - This program is designed to convert between MicroSoft Access files and LibreOffice-readable file formats. These include but are not limited to
+              
               - .csv
               - .txt
 - This program can be executed from the CLI (Command-Line Interface).
