@@ -42,8 +42,8 @@ Free and Open Source Microsoft Access File Conversion Tool
               
               CLI PARAMETERS:
                   [-h || --help        ] if you need help.
-                  [-i || --inname    ] input filename            (REQUIRED)
-                  [-o || --outname    ] output filename           (REQUIRED)
+                  [-i || --input       ] input filename            (REQUIRED)
+                  [-o || --output      ] output filename           (REQUIRED)
                   [-r || --revisionnum ] MS Access Revision        (will default to 2016 if not specified)
                   [-v || --verbose     ] Print file contents
 --------------------------------------------------------------------------------
