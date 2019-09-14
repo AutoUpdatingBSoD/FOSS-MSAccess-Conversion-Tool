@@ -34,10 +34,10 @@ Free and Open Source Microsoft Access File Conversion Tool
                 schema (e.g. sudo pacman -S java).
                 (Note: for compatibility reasons, required Java Libraries are included)
               - Compile the code with: 
-```javac -cp ".:/home/monokuma/Desktop/Web and Mobile Technologies/AccessJavaParser/jackcess-3.0.1.jar:commons-lang3-3.9.jar:commons-logging-1.2/commons-logging-1.2.jar:poi-4.0.0/poi-4.0.0.jar" FOSMSACT.java```
+```javac -cp ".:jackcess-3.0.1.jar:commons-lang3-3.9.jar:commons-logging-1.2/commons-logging-1.2.jar:poi-4.0.0/poi-4.0.0.jar" FOSMSACT.java```
 - To Run:        
               - Run the code with:
-```java -cp ".:/home/monokuma/Desktop/Web and Mobile Technologies/AccessJavaParser/jackcess-3.0.1.jar:commons-lang3-3.9.jar:commons-logging-1.2/commons-logging-1.2.jar:poi-4.0.0/poi-4.0.0.jar;" FOSMSACT```
+```java -cp ".:jackcess-3.0.1.jar:commons-lang3-3.9.jar:commons-logging-1.2/commons-logging-1.2.jar:poi-4.0.0/poi-4.0.0.jar;" FOSMSACT```
               
               CLI PARAMETERS:
                   [-h || --help        ] if you need help.
