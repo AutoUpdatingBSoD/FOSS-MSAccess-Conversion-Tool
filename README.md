@@ -69,7 +69,7 @@ Free and Open Source Microsoft Access File Conversion Tool
     
 - Roadmap:
 
-   ~~- Complete support of all Access data types when writing to Access
+   ~~- Complete support of all Access data types when writing to Access~~
    - Support for the Jackcess Encryption API
    - File splitting and joining as an option
    - Excel Support (legacy and recent)
