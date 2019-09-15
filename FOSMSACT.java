@@ -73,10 +73,10 @@ public class FOSMSACT
             }
         }
         String[] in = inname.split("\\.");
-        System.out.print(inname);
+        System.out.println("File input name: "+inname);
         String[] out = outname.split("\\.");
-        System.out.print(outname);
-        System.out.println(in[1]);
+        System.out.println("File output name: "+outname);
+        System.out.println("File input extension:" + in[1]);
 
         if (in[in.length-1].equals("accdb") && 
            (out[out.length-1].equals("csv") || out[out.length-1].equals("CSV") 
@@ -107,12 +107,9 @@ public class FOSMSACT
                 Table table = db.getTable(s);
                 if (verbose)
                 {
-                    writer.println(s);
+                    System.out.print(s+"\n");
                 }
-                else
-                {
-                    writer.write(s+"\n");
-                }
+                writer.write(s+"\n");
                 for (int j = 0; j <= 1; j++)
                 {
                     int i = 0;
@@ -129,80 +126,63 @@ public class FOSMSACT
                         al.add(s);
                         if (verbose)
                         {
-                            writer.print(s);
+                            System.out.print(s);
                         }
-                        else
-                        {
-                            writer.write(s);
-                        }
+                        writer.write(s);
                         if (i <= table.getColumnCount()-2)
                         {
                             if (verbose)
                             {
-                                writer.print(delimiter);
+                                System.out.print(delimiter);
                             }
-                            else
-                            {
-                                writer.write(delimiter);
-                            }                           
+                            writer.write(delimiter);                          
                         }
                         i++;
                     }
                     if (verbose)
                     {
-                        writer.println();
+                        System.out.println();
                     }
-                    else
-                    {
-                        writer.write("\n");
-                    }
+                    writer.write("\n");
                 }
                 for (Row row: table)
                 {
                     for (int j = 0; j < table.getColumnCount(); j++)
                     {
                         Object value = row.get(al.get(j));
-                        System.out.print(value);
                         if (value != null)
                         {            
                             if (verbose)
                             {
-                                writer.print(value);
+                                System.out.print(value.toString());
                             }
-                            else
-                            {
-                                writer.write(value.toString());
-                            }
+                            writer.print(value);
                         }
                         if (j <= table.getColumnCount()-2)
                         {
                             if (verbose)
                             {
-                                writer.print(delimiter);
+                                    System.out.print(delimiter);
                             }
-                            else
-                            {
-                                writer.write(delimiter);
-                            }  
+                            writer.write(delimiter);  
                         }  
                     }
                     if (verbose)
                     {
-                        writer.println();
+                            System.out.println();
                     }
-		            else
-                    {
-                        writer.write("\n");
-                    }
+		    writer.write("\n");
                 }
                 if (verbose)
                 {
-                    writer.println("?NEWTABLE?");               }
+                    writer.println("?NEWTABLE?");
+                }
                 else
                 {
                     writer.write("?NEWTABLE?\n");
                 }
             }
+            System.out.println("done");
             writer.close();
             db.close();
         }
@@ -272,9 +252,6 @@ public class FOSMSACT
                 String[] charsToRead = lines.get(k);
                 k++;                
                 String tableName = charsToRead[0];
-                System.out.print(tableName);
-                System.out.println();
-
                 charsToRead = lines.get(k);
                 k++;
                 String[] charsDataTypes = lines.get(k);
@@ -524,6 +501,7 @@ public class FOSMSACT
                 System.out.println("Done with this table");
 
             }
+            System.out.println("done!");
             db.close();
         }
         catch (FileNotFoundException e)
