@@ -280,22 +280,52 @@ public class FOSMSACT
                 String[] charsDataTypes = lines.get(k);
                 k++;
                 Table table;
-                if (charsDataTypes[0].equals("TEXT"))
+                if (charsDataTypes[0].equals("BIG_INT"))
                 {
                     table = new TableBuilder(tableName)
-                    .addColumn(new ColumnBuilder(charsToRead[0], DataType.TEXT))
+                    .addColumn(new ColumnBuilder(charsToRead[0], DataType.BIG_INT))
                     .toTable(db);
                 }
-                else if (charsDataTypes[0].equals("SHORT_DATE_TIME"))
+                else if (charsDataTypes[0].equals("BOOLEAN"))
                 {
                     table = new TableBuilder(tableName)
-                    .addColumn(new ColumnBuilder(charsToRead[0], DataType.SHORT_DATE_TIME))
+                    .addColumn(new ColumnBuilder(charsToRead[0], DataType.BOOLEAN))
                     .toTable(db);
                 }
-                else if (charsDataTypes[0].equals("MONEY"))
+                else if (charsDataTypes[0].equals("BYTE"))
                 {
                     table = new TableBuilder(tableName)
-                    .addColumn(new ColumnBuilder(charsToRead[0], DataType.MONEY))
+                    .addColumn(new ColumnBuilder(charsToRead[0], DataType.BYTE))
+                    .toTable(db);
+                }
+                else if (charsDataTypes[0].equals("COMPLEX_TYPE"))
+                {
+                    table = new TableBuilder(tableName)
+                    .addColumn(new ColumnBuilder(charsToRead[0], DataType.COMPLEX_TYPE))
+                    .toTable(db);
+                }
+                else if (charsDataTypes[0].equals("DOUBLE"))
+                {
+                    table = new TableBuilder(tableName)
+                    .addColumn(new ColumnBuilder(charsToRead[0], DataType.DOUBLE))
+                    .toTable(db);
+                }
+                else if (charsDataTypes[0].equals("FLOAT"))
+                {
+                    table = new TableBuilder(tableName)
+                    .addColumn(new ColumnBuilder(charsToRead[0], DataType.FLOAT))
+                    .toTable(db);
+                }
+                else if (charsDataTypes[0].equals("GUID"))
+                {
+                    table = new TableBuilder(tableName)
+                    .addColumn(new ColumnBuilder(charsToRead[0], DataType.GUID))
+                    .toTable(db);
+                }
+                else if (charsDataTypes[0].equals("INT"))
+                {
+                    table = new TableBuilder(tableName)
+                    .addColumn(new ColumnBuilder(charsToRead[0], DataType.INT))
                     .toTable(db);
                 }
                 else if (charsDataTypes[0].equals("LONG"))
@@ -304,31 +334,89 @@ public class FOSMSACT
                     .addColumn(new ColumnBuilder(charsToRead[0], DataType.LONG))
                     .toTable(db);
                 }
-                else
+                else if (charsDataTypes[0].equals("MONEY"))
+                {
+                    table = new TableBuilder(tableName)
+                    .addColumn(new ColumnBuilder(charsToRead[0], DataType.MONEY))
+                    .toTable(db);
+                }
+                else if (charsDataTypes[0].equals("MEMO"))
                 {
                     table = new TableBuilder(tableName)
                     .addColumn(new ColumnBuilder(charsToRead[0], DataType.MEMO))
                     .toTable(db);
                 }
+                else if (charsDataTypes[0].equals("NUMERIC"))
+                {
+                    table = new TableBuilder(tableName)
+                    .addColumn(new ColumnBuilder(charsToRead[0], DataType.NUMERIC))
+                    .toTable(db);
+                }
+                else if (charsDataTypes[0].equals("SHORT_DATE_TIME"))
+                {
+                    table = new TableBuilder(tableName)
+                    .addColumn(new ColumnBuilder(charsToRead[0], DataType.SHORT_DATE_TIME))
+                    .toTable(db);
+                }
+                else if (charsDataTypes[0].equals("TEXT"))
+                {
+                    table = new TableBuilder(tableName)
+                    .addColumn(new ColumnBuilder(charsToRead[0], DataType.TEXT))
+                    .toTable(db);
+                }
+                else
+                {
+                    throw new Exception();
+                }
                 for (int i = 1; i < charsDataTypes.length; i++)
                 {
                     System.out.println(charsDataTypes[i]);
-                    if (charsDataTypes[i].equals("SHORT_DATE_TIME"))
+                    if (charsDataTypes[i].equals("BIG_INT"))
                     {
                         new ColumnBuilder(charsToRead[i])
-                        .setType(DataType.SHORT_DATE_TIME)
+                        .setType(DataType.BIG_INT)
                         .addToTable(db.getTable(tableName));
                     }
-                    else if (charsDataTypes[i].equals("MONEY"))
+                    else if (charsDataTypes[i].equals("BOOLEAN"))
                     {
                         new ColumnBuilder(charsToRead[i])
-                        .setType(DataType.MONEY)
+                        .setType(DataType.BOOLEAN)
                         .addToTable(db.getTable(tableName));
                     }
-                    else if (charsDataTypes[i].equals("TEXT"))
+                    else if (charsDataTypes[i].equals("BYTE"))
                     {
                         new ColumnBuilder(charsToRead[i])
-                        .setType(DataType.TEXT)
+                        .setType(DataType.BYTE)
+                        .addToTable(db.getTable(tableName));
+                    }
+                    else if (charsDataTypes[i].equals("COMPLEX_TYPE"))
+                    {
+                        new ColumnBuilder(charsToRead[i])
+                        .setType(DataType.COMPLEX_TYPE)
+                        .addToTable(db.getTable(tableName));
+                    }
+                    else if (charsDataTypes[i].equals("DOUBLE"))
+                    {
+                        new ColumnBuilder(charsToRead[i])
+                        .setType(DataType.DOUBLE)
+                        .addToTable(db.getTable(tableName));
+                    }
+                    else if (charsDataTypes[i].equals("FLOAT"))
+                    {
+                        new ColumnBuilder(charsToRead[i])
+                        .setType(DataType.DOUBLE)
+                        .addToTable(db.getTable(tableName));
+                    }
+                    else if (charsDataTypes[i].equals("GUID"))
+                    {
+                        new ColumnBuilder(charsToRead[i])
+                        .setType(DataType.GUID)
+                        .addToTable(db.getTable(tableName));
+                    }
+                    else if (charsDataTypes[i].equals("INT"))
+                    {
+                         new ColumnBuilder(charsToRead[i])
+                        .setType(DataType.INT)
                         .addToTable(db.getTable(tableName));
                     }
                     else if (charsDataTypes[i].equals("LONG"))
@@ -337,13 +425,43 @@ public class FOSMSACT
                         .setType(DataType.LONG)
                         .addToTable(db.getTable(tableName));
                     }
-                    else
+                    else if (charsDataTypes[i].equals("MEMO"))
                     {
                         new ColumnBuilder(charsToRead[i])
                         .setType(DataType.MEMO)
                         .addToTable(db.getTable(tableName));
                     }
-                } 
+                    else if (charsDataTypes[i].equals("MONEY"))
+                    {
+                        new ColumnBuilder(charsToRead[i])
+                        .setType(DataType.MONEY)
+                        .addToTable(db.getTable(tableName));
+                    }
+                    else if (charsDataTypes[i].equals("NUMERIC"))
+                    {
+                        new ColumnBuilder(charsToRead[i])
+                        .setType(DataType.MEMO)
+                        .addToTable(db.getTable(tableName));
+                    }
+                    else if (charsDataTypes[i].equals("OLE"))
+                    {
+                        new ColumnBuilder(charsToRead[i])
+                        .setType(DataType.OLE)
+                        .addToTable(db.getTable(tableName));
+                    }                    
+                    else if (charsDataTypes[i].equals("SHORT_DATE_TIME"))
+                    {
+                        new ColumnBuilder(charsToRead[i])
+                        .setType(DataType.SHORT_DATE_TIME)
+                        .addToTable(db.getTable(tableName));
+                    }
+                    else if (charsDataTypes[i].equals("TEXT"))
+                    {
+                        new ColumnBuilder(charsToRead[i])
+                        .setType(DataType.TEXT)
+                        .addToTable(db.getTable(tableName));
+                    }
+                }
                 String[] nextInput = lines.get(k);
                 k++;
                 while (!nextInput[0].equals("?NEWTABLE?"))
@@ -415,6 +533,11 @@ public class FOSMSACT
         catch (IOException e)
         {
             System.out.println("Something happened! Can't write the contents of the file to the database!");
+            e.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            System.out.println("Unsupported data type! Can't write the contents!");
             e.printStackTrace();
         }
         //catch (ParseException e)
