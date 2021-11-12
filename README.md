@@ -38,7 +38,7 @@ Free and Open Source Microsoft Access File Conversion Tool
 ```javac -cp ".:jackcess-3.0.1.jar:commons-lang3-3.9.jar:commons-logging-1.2:commons-logging-1.2.jar:poi-4.0.0:poi-4.0.0.jar" FOSMSACT.java```
 - To Run:        
               - Run the code with:
-```java -cp ".:jackcess-3.0.1.jar:commons-lang3-3.9.jar:commons-logging-1.2:commons-logging-1.2.jar:poi-4.0.0:poi-4.0.0.jar;" FOSMSACT```
+```java -cp ".:jackcess-3.0.1.jar:commons-lang3-3.9.jar:commons-logging-1.2:commons-logging-1.2.jar:poi-4.0.0:poi-4.0.0.jar" FOSMSACT```
               
               CLI PARAMETERS:
                   [-h || --help        ] if you need help.
