@@ -464,13 +464,9 @@ public class FOSMSACT
                         Date date = new Date(dateInString);
                         row[j] = date;
                     }
-                    else if (charsDataTypes[j].equals("MONEY"))
+                    else if (charsDataTypes[j].equals("MONEY") || charsDataTypes[j].equals("TEXT"))
                     {
                         row[j] = nextInput[j];                        
-                    }
-                    else if (charsDataTypes[j].equals("TEXT"))
-                    {
-                        row[j] = nextInput[j];
                     }
                     else if (charsDataTypes[j].equals("LONG"))
                     {
